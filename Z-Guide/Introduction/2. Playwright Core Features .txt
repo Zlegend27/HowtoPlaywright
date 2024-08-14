@@ -1,0 +1,71 @@
+
+Playwright Core Features 
+
+    Any browser - Any platform - One API
+    - Cross-browser : Chromium (Chrome), WebKit (Safari), and Firefox
+    - Cross-platform : Windows, Linux, and macOS, locally or on CI
+    - Cross-language : TypeScript, JavaScript, Python, .NET, and Java
+    
+    No flaky tests  
+
+        - Auto-wait : playwright waits for elements to be actionable prior to performing actions.
+    it also has a rich set of introspection events. The combination of the two eliminates 
+    the need for artificial timeouts. 
+        - Web-first assertions : playwright assertions are created specifically for the dynamic web
+    Checks are automatically retried until the necessary conditons are met. 
+        - Tracing : Configure test retry strategy, capture execution trace, videos, and screenshots to eliminate flakes. 
+
+    No Limits  
+
+        Browsers run web content belonging to different origins in different processes, Playwright is alighend with 
+        the modern browsers architecture and runs test out-of-process. This makes Playwright free of the typical 
+        in-process test runner limitations. 
+
+        - multiple : test scenarios that span multiple tabs, multiple origins, and multiple users. 
+        Create scenarios with different contexts for different users and run them against your server, all in 1 test. 
+
+        - Trusted events : Hover elements, interact with dynamic controls, and produce trusted events. 
+        Playwright uses a real-browser input pipeline indistinguishable from the real user 
+
+        - Test frames, pierce Shadow DOM : playwright selectors pierce shadow DOM and allow entering frames seamlessly which 
+        means you don't need to do anything extra in your test scripts to locatoe and interact with elemets within Shadow DOM
+
+    Full isolation - Fast execution 
+
+        - browser contexts : playwright creates a browser context for each test. Browser context is equivilent to 
+        a brand new browser profile. This delivers full test isolation with zero overhead. Creating a new 
+        browser context only takes a handful of milliseconds
+
+        - Log in Once : Save the authentication state of the context and reuse it in all the tests. 
+        This bypasses repetitive log in operations in each test. Yet still delivers full isolation of independent tests. 
+
+    Powerful Tooling  
+
+        - Codegen : Generate tests by recording your actions. Save them into any language. 
+
+        - Playwright Inspector : Inspect the page, generate selectors, step through the test execution, 
+        see click points, and explore execution logs. 
+
+        - Trace Viewer : Capture all the information to investigate the test failure. 
+        Playwright trace contains test execution screencast, live DOM snapshots, action explorer, test source, and many more. 
+
+    Parallel execution 
+
+        - Playwright can be easily configured to run multiple tests at the same time. 
+        reducing the total time needed for test execution. This is especially useful for extensive test suites or multi-browser testing
+
+    Visual Regression (Snapshot) 
+
+        - This feature involves comparing current snapshots of web pages or elements with baseline images to 
+        detect any visual changes, ensure UI consistency, and identify unintended visual alterations. 
+
+    Built-in Multiple Reports 
+
+        - Playwright provides bult-in support for generating multiple types of test reports 
+        such as (HTML, JSON and JUnit) making it easier to integrate Playwright with different tools and dashboards
+
+    Active Development 
+     
+        - Playwright is under active development by Microsoft, with frequent updates and improvements
+        Being open-soure allows community contributions as well keeping playwright up to date with the
+        latest web technologies and browser updates, enhances features and addresses bugs. 

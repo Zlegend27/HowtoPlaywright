@@ -1,0 +1,3 @@
+
+how open playwright test runner?
+    - npx playwright test --ui

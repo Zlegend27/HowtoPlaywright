@@ -1,0 +1,32 @@
+
+
+- test 
+    from the @playwright/test package. This function serves as a bridge between your
+    test scripts and Playwright's powerful browser automation framework.
+
+    The 'test' function simplifies access to the extensive
+    range of methods and properties in the Playwright API. This includes
+    functionalities for browser interactions, page navigation, element manipulation (like
+    clicking or typing), and other vital actions for your tests.
+
+    his eliminates the need for directly interacting with the
+    Playwright API's complex structure, making testing more concise and manageable
+
+- page 
+    In Playwright, ‘page’ is an object, and a part of Playwright's API refers to a
+    new isolated browser page used specifically for that test. It's a pre-configured
+    instance provided by Playwright that enables various actions essential for
+    automated testing, such as navigating through web pages, locating and
+    interacting with web elements.
+
+    When it is used in a test, the ({ page }) argument tells Playwright to setup the
+    page fixture and provide it to your test function. 
+
+- Async and Await 
+    A promise in JavaScript is an object representing the eventual completion or failure of 
+    an asynchronous operation. It allows you to write code that will execute after the 
+    asynchronous operation has been completed. 
+
+    With Playwright you can handle these promises using Async and Await. By marking a 
+    function as asynchronous, you can use the await keyword to pause the execution 
+    of your function until the promise is returned by a Playwright command is resolved.

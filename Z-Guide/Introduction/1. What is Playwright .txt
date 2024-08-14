@@ -1,0 +1,12 @@
+
+What is playwright?  
+
+playwright is an open-source automation tool created by Microsoft and designed for end-to-end testing 
+of web applications across major browsers like Chrome, Firefox, and Safari, in both headless and headed modes
+in a single API. Playwright is deisnged to enable cross-browser web automation. 
+
+Supports several programming languages such as JavaScript, TypeScript, Python, .NET (C#), and Java.
+offers features like mobile browser emulation, network interception, and robust handling 
+of asynchronous web elements making it a versatile tool for both testing and web automation tasks. 
+
+

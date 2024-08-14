@@ -1,0 +1,39 @@
+
+Playwright architecture 
+
+    WebSockets are communication protocol that allows for two-way, real-time communication between a browser and a server. 
+allowing requests to be passed back and fourth without needing to re-open the connection. This ongoing connection
+facilitates immediate data transfer, ideal for online games, chat applications, or financial trading platforms 
+
+    Playwright uses a single WebSocket connection between the client and server to communicate all the commands and responses. 
+When you trigger a test, your test code is executed on the client side, and the commands you write are converted into JSON 
+format and sent to the playwright server using the WebSocket protocol 
+
+    Once the connection is established, the commands are transmitted to the Playwright server, which then executes them on 
+the browser instance. The server then sends the response back to the client in JSON format through the WebSocket connection. 
+This process continues until all the commands in your test are executed or closed by the client and server itself  
+
+    DevTools Protocol is a remote debugging protocol (API) that lets developers communicate with a browser. 
+Chrome uses CDP to inspect the browser's state, control its behavior, and collect debugging information. 
+
+    Playwright uses these APIs to interact directly with browser components, providing a more robust and unrestricted approach 
+to automated web testing than traditional in-browser JavaScript. This protocol allows web page navigation,element interaction,
+screen capture, and more. allowing Playwright to perform actions and access information that would be restricted or impossible 
+with standard in-browser scripts. 
+
+    By operating outside the browser enviornment, Playwright bypasses standard browser limitations and directly interacts with 
+the browser's internal APIs. This grants playwright flexibility and control without the limitations typically seen on in-browser 
+scripts. 
+
+    When Playwright needs to interact with a webpage, including locating elements in the DOM, it cannot directly access the DOM 
+like an in-process tool. Instead, Playwright uses browser automation protocols, such as the Chrome DevTools Protocol (CDP) for 
+Chromium-based browsers, to communicate with the browser. To locate an element, Playwright sends a command via these protocols, 
+requesting the browser to find the element in the DOM. The browser processes this request, locates the element, and sends back 
+the relevant information to Playwright. 
+ 
+
+    1. Writing and Executing Test Code
+    2. Establishing WebSocket Connection
+    3. Transferring code to server
+    4. Interaction with Browser via Dev Protocol APIs
+    5. Recieving Responses and Output

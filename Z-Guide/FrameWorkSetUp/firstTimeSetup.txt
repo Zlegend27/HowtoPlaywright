@@ -1,0 +1,66 @@
+
+Prerequisites 
+    - git 
+        its a version control system that is used to manage the codebase for the framework. In the context of Playwright,
+        it can be used to manage and version control your test scripts and configurations,
+    
+    - node 
+        Node.js is a JavaScript runtime that is used to run the frameowork, and npm is the package manager for Node.js.
+        npm is installed with Node.js, so you only need to install Node.js
+
+
+
+Step 1. 
+    a. Create a folder on your desktop
+    b. Open the folder in your IDE (in this case. VS code)
+    c. Open a new terminal, and type 'npm init playwright@latest -y'
+        Typing the above line will not only initialize the folder with npm and create a defualt package.json file, 
+        but it will also download playwright/test as a dependency at the same time and add the required related
+        files such as your playwright.config files
+
+
+Step 2. 
+    a. Open your playwright.config file
+        *these steps are optional but I recommend*
+    b. Find your 'reporter' key, and alter the value to the following: 
+            reporter: [
+                ['html', 
+                {
+                    open: 'never'
+                }
+            ],
+                ['list']
+            ],  
+       The above line will cause your html test results report to open after every time you run a test. By default,
+       it is set to only open after runs where a test fails (You may also set it to open: 'never', which will prevent 
+       the reporter from opening even on runs with failed test). There are other types of reporters you can use, 
+       which can be specified in this section like in the following example: 
+            [['html', {open: 'always'}], ['line', {open: 'never'}], [dot]]
+    c. Find your 'use' key, and within that key/object find the 'baseURL' key which should be commented out
+       You can either make a new 'baseURL', key under the commented one, or un-comment the one already included 
+       and add your desired URL in single quotes as its value
+    d. Within your 'use' key, and after your 'baseUrl', add the key-value pair: 
+       headless: true 
+       This will prevent the runner from visibly opening on your desktop when you run a test.
+
+
+Step 3. 
+    a. Add a 'pages' folder to your project's main folder 
+    b. Add a file that will correspond to the page you want to use
+    c. The initial layout should look similar to how FrontendPage.ts looks in this repository 
+       Your file might have a different name if is associated with a different webpage, 
+       I recommend starting with a basePage that includes,
+       the footers, nav bar or anything that remains on all pages of your site
+
+
+Step 4. 
+    a. Add a 'fixtures' folder to your project's main folder 
+    b. Create a pom-centric fixture file (this will help maintin an organized framework)
+    c. Set up your pom-centric fixture file as shown in the pom_fixture.ts file in this repository
+        In this file you will import your pom files reducing the imports you use in your spec file
+
+
+Step 5. 
+    a. Go to your tests folder, and open example.spec.ts 
+    b. use ctrl-a to highlight everything and delete the contents of this file
+    c. Set up your file how it is set up in example.spec.ts

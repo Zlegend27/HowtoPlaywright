@@ -1,0 +1,18 @@
+
+Navigate to URL 
+    Playwright can run tests on Chromium, WebKit, and Firefox browsers
+    also browsers such as Google Chrome, and Microsoft Edge. as well as 
+    emulated tablets and mobile devices. 
+
+    The  page.goto(url)  command in Playwright is a fundamental method used 
+    to navigate to a specified URL. This command is essential for any test 
+    script that interacts with web pages.
+
+Refresh Page / navigate back-forward
+    With Playwright, you can easily perform actions such as refreshing a page
+    or navigating back and forward in the browser's history. These actions are 
+    accomplished using specific methods provided by the Playwright API. 
+
+    await page.reload();
+    await page.goBack();
+    await page.goForward();

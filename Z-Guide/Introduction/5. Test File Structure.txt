@@ -1,0 +1,18 @@
+
+    The basic test structure in Playwright consists of a test() function, 
+which defines indivisual test cases. If we want to use more then one 
+test case in a single test file, it's good practice to group them using 
+test.describe() function
+
+    The test() function is executed in Playwright environment that launches
+the browser and provides a fresh page for each test. 
+
+test.describe() : declares a group of tests
+
+test() : defines indivisual test cases, and helps the runner launch the browser 
+          using { page } fixture. 
+
+    In Playwright, the setup and teardown of browser instances are managed automatically
+by the Playwright Test Runner. When a Playwright test is executed, the test runner 
+automatically creates a new browser context and page for each test. As a result, 
+you don't need to worry about explicitly launching or closing browsers for each test.
